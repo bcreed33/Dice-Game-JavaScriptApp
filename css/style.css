@@ -1,14 +1,3 @@
-/**********************************************
-*** GENERAL
-
-@media only screen and (max-width: 470px){}
-@media only screen and (max-width: 400px){}
-@media only screen and (max-width: 355px){}
-
-**********************************************/
-
-
-
 
 * {
     margin: 0;
@@ -24,36 +13,55 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
-    background-size: cover;
-    background-position: center;
+   background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(img/back.jpg);
     font-family: Lato;
     font-weight: 300;
-    position: relative;
-    height: 100vh;
     color: #555;
 }
 
 .wrapper {
-    width: 100%;
+    width:95%;
     max-width: 1000px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: block;
+     margin: 0 auto;
+margin-top:50px;
     background-color: #fff;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
 }
+@media only screen and (max-width:1000px){
+.wrapper {
+  margin-top: 10px;
+}
+}
+
+
 
 .player-0-panel,
 .player-1-panel {
     width: 50%;
     float: left;
     height:auto;
-    padding: 100px;
+    padding:100px;
+}
+@media only screen and (max-width:1000px){
+  .player-0-panel,
+  .player-1-panel {
+      padding:50px;
+  }
+}
+@media only screen and (max-width:750px){
+  .player-0-panel,
+  .player-1-panel {
+      padding:10px;
+  }
 }
 
+@media only screen and (max-width:400px){
+  .player-0-panel,
+  .player-1-panel {
+      padding:0px;
+  }
+}
 
 
 /**********************************************
@@ -71,13 +79,24 @@ body {
     position: relative;
     width: 100%;
 }
+@media only screen and (max-width:750px){
+  .player-name {
+      font-size: 25px;}
+}
+@media only screen and (max-width:450px){
+  .player-name { text-align: left;
+  padding-left:5px; }
+
+}
+
+
 
 .player-score {
     text-align: center;
     font-size: 80px;
     font-weight: 100;
     color: #EB4D4D;
-    margin-bottom: 130px;
+    margin-bottom: 100px;
 }
 
 .active { background-color: #f7f7f7; }
@@ -92,6 +111,14 @@ body {
     right: 10px;
 
 }
+@media only screen and (max-width:750px){
+
+  .active .player-name::after {
+      top: -17px;
+      right:5px;
+   }
+
+}
 
 .player-current-box {
     background-color: #EB4D4D;
@@ -101,6 +128,13 @@ body {
     padding: 12px;
     text-align: center;
 }
+@media only screen and (max-width:750px){
+.player-current-box {
+  width: 60%
+}
+}
+
+
 
 .player-current-label {
     text-transform: uppercase;
@@ -113,33 +147,42 @@ body {
     font-size: 30px;
 }
 
-button {
-    position: absolute;
-    width: 200px;
-    left: 50%;
-    transform: translateX(-50%);
+button{
+    width:100%;
+    max-width:350px;
+   height:50px;
     color: #555;
-    background: none;
+    background:none;
     border: none;
     font-family: Lato;
     font-size: 20px;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 300;
-    transition: background-color 0.3s, color 0.3s;
-}
 
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top:10px!important;
+    margin-bottom: 10px!important;
+
+}
+@media only screen and (max-width:750px){
+  button{
+
+      background:lightgrey;}
+}
 button:hover { font-weight: 600; }
-button:hover i { margin-right: 20px; }
+button:hover i { margin-right:5px; }
 
 button:focus {
     outline: none;
 }
 
 i {
-    color: #EB4D4D;
+    color:green;
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 10px;
     font-size: 32px;
     line-height: 1;
     vertical-align: text-top;
@@ -155,10 +198,28 @@ i {
 .dice {
     position: absolute;
     left: 50%;
-    top: 178px;
+    top:400px;
     transform: translateX(-50%);
-    height: 100px;
+    height: 150px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+@media only screen and (max-width:1000px){
+  .dice {
+      top:250px;
+   }
+}
+@media only screen and (max-width:750px){
+  .dice {
+      top:200px;
+      height: 100px;
+   }
+}
+@media only screen and (max-width:400px){
+  .dice {
+    top:250px;
+       height: 80px;
+   }
 }
 
 .winner { background-color: #f7f7f7; }
@@ -171,7 +232,8 @@ i {
   background-color: rgba(1,1,1,.5);
   position: absolute;
   z-index: 998;
- }
+  top:0;
+}
 
 #rulesPopUp{
   display: block;
@@ -179,7 +241,8 @@ i {
   z-index: 999;
   width:90%;
   max-width:800px;
-  height: 300px;
+  height: auto;
+  min-height: 300px;
   background-color:#fff;
   top: 100px;
   left: 0;
@@ -203,5 +266,11 @@ i {
 -ms-transform: rotate(45deg);
 transform: rotate(45deg);
 
+
+}
+
+.col-xs-6{
+  padding-right:5px;
+  padding-left:5px;
 
 }

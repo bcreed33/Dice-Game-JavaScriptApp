@@ -1,68 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="initial-scale=1.0,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+<html>
+
+<head>
+
+<meta name="viewport" content="initial-scale=1.0,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
-        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-        <link type="text/css" rel="stylesheet" href="style.css">
+<meta charset="utf-8">
 
-        <title>Dice Game</title>
-    </head>
+<title>Brandon Reed - Dice Game</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="css/style.css" rel="stylesheet">
+</head>
 
-    <body>
-        <div class="wrapper clearfix">
+<body>
+
+  <div class="wrapper clearfix">
+    <div class="col-xs-6">
           <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
-          <button class="btn-rules"><i class="ion-ios-plus-outline"></i>Rules</button>
-            <div class="player-0-panel active">
+    </div>
+    <div class="col-xs-6">
+      <button class="btn-rules" ><i class="ion-ios-plus-outline"></i>Rules</button>
+
+   </div>
+       <div class="player-0-panel active">
 
 
-                <div class="player-name" id="name-0">Player 1</div>
-                <div class="player-score" id="score-0">43</div>
-                <div class="player-current-box">
-                    <div class="player-current-label">Current</div>
-                    <div class="player-current-score" id="current-0">11</div>
-                </div>
-            </div>
-
-            <div class="player-1-panel">
-                <div class="player-name" id="name-1">Player 2</div>
-                <div class="player-score" id="score-1">72</div>
-                <div class="player-current-box">
-                    <div class="player-current-label">Current</div>
-                    <div class="player-current-score" id="current-1">0</div>
-                </div>
-            </div>
-
-
-            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
-            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
-
-            <img src="dice-5.png" alt="Dice" class="dice">
-        </div>
-<div id="rulesBG">
-  <div id="rulesPopUp">
-          <div id="closePopup">
-            <button>
-            <i class="ion-ios-plus-outline"></i>
-            </button>
+          <div class="player-name" id="name-0">Player 1</div>
+          <div class="player-score" id="score-0">43</div>
+          <div class="player-current-box">
+              <div class="player-current-label">Current</div>
+              <div class="player-current-score" id="current-0">11</div>
           </div>
-    <h1>Game Rules</h1>
-  <p>- The game has 2 players, playing in rounds</p>
+      </div>
 
- <p>- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score
+      <div class="player-1-panel">
+          <div class="player-name" id="name-1">Player 2</div>
+          <div class="player-score" id="score-1">72</div>
+          <div class="player-current-box">
+              <div class="player-current-label">Current</div>
+              <div class="player-current-score" id="current-1">0</div>
+          </div>
+      </div>
+
+      <div class="col-xs-12">
+      <button class="btn-roll"> <i class="ion-ios-loop"></i>Roll dice</button>
+    </div>
+      <div class="col-xs-12">
+      <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+    </div>
+
+      <img src="img/dice-5.png" alt="Dice" class="dice">
+  </div>
+<div id="rulesBG">
+<div id="rulesPopUp">
+    <div id="closePopup">
+      <button>
+      <i class="ion-ios-plus-outline"></i>
+      </button>
+    </div>
+<h1>Game Rules</h1>
+
+<p>- The game has 2 players, playing in rounds</p>
+
+<p>- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his current score
 </p>
- <p>- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn
+<p>- BUT, if the player rolls a 1, all his current score gets lost. After that, it's the next player's turn
 </p>
- <p>- The player can choose to 'Hold', which means that his ROUND score gets added to his GLOBAL score. After that, it's the next player's turn
+<p>- The player can choose to 'Hold', which means that his ROUND score gets added to his Total score. After that, it's the next player's turn
 </p>
-  <p>- The first player to reach 100 points on GLOBAL score wins the game
-  </p>
+<p>- The first player to reach 100 points on Total score wins the game
+</p>
 </div>
 </div>
 
 
-        <script src="app.js"></script>
-    </body>
-</html>
+
+
+
+
+
+
+
+  <script src="js/script.js"></script>
+
+  </body>
+  </html>

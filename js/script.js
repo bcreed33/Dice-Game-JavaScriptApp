@@ -26,7 +26,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         //display the result of the "dice roll" and change the image of the dice to match the roll.
         var diceDOM = document.querySelector('.dice');
         diceDOM.style.display= 'block';
-        diceDOM.src= 'dice-'+dice+'.png';
+        diceDOM.src= 'img/dice-'+dice+'.png';
         //console.log(dice);
         //update the round score IF the rolled number was not a 1
         if(dice !== 1){
@@ -56,11 +56,13 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
         if(scores[activePlayer] >= 100){
           //changing Player 1/2 to "winner".
           document.querySelector('#name-'+ activePlayer).innerHTML = 'Winner';
+          document.querySelector('#name-'+ activePlayer).style.textAlign='center';
           //Hiding the dice when the game is over.
           document.querySelector('.dice').style.display="none";
           // adding the class winner to the player that won the game and removing the class active.
           document.querySelector('.player-'+activePlayer+'-panel').classList.add('winner');
           document.querySelector('.player-'+activePlayer+'-panel').classList.remove('active');
+
           //Kills the function of the buttons of roll dice and hold.
           gamePlaying = false;
         }
@@ -84,7 +86,7 @@ function gameInit() {
     activePlayer=0;
     gamePlaying = true;
     //Hides the dice until the "roll dice" button is hit (again)
-    document.querySelector('.dice').style.display= 'none';
+    //document.querySelector('.dice').style.display= 'none';
     //sets all the scores to 0
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
